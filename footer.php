@@ -1,194 +1,138 @@
-<html>
-<head>
-  <style>
- /* Footer Styles */
-.footer {
-    background:  #FF7F7F ;
-    padding: 2rem 0;
-}
-
-.secContainer {
-    display: grid;
-    gap: 1.5rem;
-    text-align: center;
-    align-items: flex-start;
-}
-
-.logoDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.footerLogo {
-    display: flex;
-    color: var(--blackColor);
-    font-weight: 500;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: .5rem;
-    margin-bottom: 1rem;
-}
-
-.footerLogo .icon {
-    font-size: 25px;
-    color: var(--blackColor);
-}
-
-.socials {
-    gap: .5rem;
-    margin: auto;
-    justify-content: center;
-}
-
-.socials .icon {
-    font-size: 25px;
-    background: var(--primaryColor);
-    border-radius: 50%;
-    padding: 8px;
-    color: white;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.socials .icon:hover {
-    background: var(--primaryColorLight);
-    color: black;
-}
-
-.footerLinks {
-    display: grid;
-}
-
-.footerLinks .linkTitle {
-    padding-bottom: .5rem;
-    color: black;
-    font-weight: 700;
-}
-
-.footerLinks li {
-    list-style: none;
-}
-
-.footerLinks li:hover {
-    transform: translate(10px);
-}
-
-.footerLinks li a {
-    color: black;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 5px;
-    text-decoration: none;
-}
-
-.footerLinks li a:hover {
-    color: var(--primaryColor);
-}
-
-.footerLinks img {
-    height: 50px;
-    width: 50px;
-    border-radius: 30%;
-    object-fit: cover;
-    border: 1px solid var(--whiteColor);
-    justify-content: center;
-    box-shadow: 0 0 2px 2px rgb(251, 212, 194);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.footerLinks .name,
-.footerLinks .phone,
-.footerLinks .email {
-    color: black;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 5px;
-}
-
-@media screen and (min-width: 448px) {
-    .secContainer {
-        grid-template-columns: repeat(2, 1fr);
-        text-align: start !important;
-        align-items: center;
-    }
-}
-
-@media screen and (min-width: 640px) {
-    .secContainer {
-        grid-template-columns: repeat(4, 1fr);
-        padding: .5rem 0;
-    }
-}
-
-  </style>
-</head>
-<body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer Section</title>
-    <link rel="stylesheet" href="footer.css">
+    <style>
+        /* Footer Styles */
+        .footer {
+            background: #000; /* Black background */
+            padding: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .secContainer {
+            display: grid;
+            gap: 1.5rem;
+            text-align: center;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .footerLinks {
+            display: grid;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .footerLinks .linkTitle {
+            padding-bottom: 0.5rem;
+            color: white; /* White text */
+            font-weight: 700;
+        }
+
+        .footerLinks ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .footerLinks li {
+            margin: 5px 0;
+        }
+
+        .footerLinks li a {
+            color: white; /* White text */
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .footerLinks li a:hover {
+            color: #FF4500; /* Hover color */
+        }
+
+        .footerLinks .name,
+        .footerLinks .phone,
+        .footerLinks .email {
+            display: block;
+            color: white; /* White text */
+            font-size: 13px;
+            font-weight: 500;
+            padding: 5px 0;
+        }
+
+        .mapContainer {
+            width: 100%;
+            max-width: 800px;
+            height: 250px;
+            border: 2px solid white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media screen and (min-width: 640px) {
+            .secContainer {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <div class="footer">
     <div class="secContainer container grid">
-        <!-- Logo and Social Links -->
-        <div class="logoDiv" data-aos="fade-up">
-            <div class="footerLogo">
-                <img src="logo.png" alt="logo" /> <!-- Replace logo.png with actual image -->
-            </div>
-            <div class="socials flex">
-                <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
         <!-- Information Links -->
-        <div class="footerLinks" data-aos="fade-up">
+        <div class="footerLinks">
             <span class="linkTitle">Information</span>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Travel</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="about_us.php">About Us</a></li>
+                <li><a href="why_donate_blood.php">Why Donate Blood</a></li>
+                <li><a href="donate_blood.php">Become a donor</a></li>
+                <li><a href="need_blood.php">Need Blood</a></li>
             </ul>
         </div>
 
         <!-- Helpful Links -->
-        <div class="footerLinks" data-aos="fade-up">
+        <div class="footerLinks">
             <span class="linkTitle">Helpful Links</span>
             <ul>
-                <li><a href="#">Destination</a></li>
+                <li><a href="#">Popular blood Bank</a></li>
                 <li><a href="#">Support</a></li>
-                <li><a href="#">Travel & Condition</a></li>
+                <li><a href="#">Hospitals</a></li>
                 <li><a href="#">Privacy</a></li>
             </ul>
         </div>
 
         <!-- Contact Details -->
-        <div class="footerLinks" data-aos="fade-up">
+        <div class="footerLinks">
             <span class="linkTitle">Contact Details</span>
-            <img src="designer.jpg" alt="Designer" /> <!-- Replace designer.jpg with actual image -->
             <span class="name">Designer: M.R.M Nimas</span>
             <span class="phone">+94 123 456 789</span>
             <span class="email">nimasrfk.off@gmail.com</span>
         </div>
+
+        <!-- Map Section -->
+        <div class="mapContainer">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.8365827424684!2d80.5000512!3d8.760589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afc14fff9009211%3A0x56123bec75fea1a9!2sDistrict+General+Hospital+Vavuniya!5e0!3m2!1sen!2slk!4v1605225239642"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
     </div>
 </div>
 
-<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For FontAwesome icons -->
 </body>
-</html>
-
-
-</body>
-
 </html>

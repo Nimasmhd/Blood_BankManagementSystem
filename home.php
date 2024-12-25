@@ -132,7 +132,22 @@
             padding: 12px 15px; 
             border-radius: 25px;
             font-size: 15px;
+            
         }
+        .btnlast{
+            background-color:red; 
+            color:white; 
+            font-weight: bold; 
+            padding: 12px 15px; 
+            border-radius: 25px;
+            font-size: 15px;
+            border:none;
+            
+        }
+        a .btnlast:hover{
+            background-color:white; 
+            color:red; 
+}
         .carousel-caption a{
             text-decoration: none;
             color:white; 
@@ -149,7 +164,9 @@
     display:flex;
     top: 50%;
 }
-
+.sub-title{
+    color:red;
+}
         
     </style>
 </head>
@@ -257,7 +274,7 @@
                     <!-- Universal Donors and Blood Groups -->
                     <div class="row mt-4">
                         <div class="col-lg-6">
-                            <h2>BLOOD GROUPS</h2>
+                            <h2 class = "sub-title">BLOOD GROUPS</h2>
                             <p>
                                 <?php
                                 $sql = "select * from pages where page_type='bloodgroups'";
@@ -270,17 +287,18 @@
                                 ?>
                             </p>
                         </div>
-                        <div class="col-lg-6">
-                            <img class="img-fluid rounded" src="image/blood_donationcover.jpeg" alt="Blood Donation Cover">
-                        </div>
+                        <div class="col-lg-5">
+                         <iframe width="100%" height="300px" src="https://www.youtube.com/embed/xfZhb6lmxjk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
                     </div>
 
                     <hr>
 
                     <!-- Call to Action Section -->
-                    <div class="row mb-4">
+                    <div class="row mb-4 d-flex justify-content-center align-items-center">
                         <div class="col-md-8">
-                            <h4>UNIVERSAL DONORS AND RECIPIENTS</h4>
+                            <h4 class="text-left  sub-title">UNIVERSAL DONORS AND RECIPIENTS</h4>
                             <p>
                                 <?php
                                 $sql = "select * from pages where page_type='universal'";
@@ -293,10 +311,52 @@
                                 ?>
                             </p>
                         </div>
-                        <div class="col-md-4">
-                            <a class="btn btn-lg btn-secondary btn-block" href="donate_blood.php" style="background-color:#7FB3D5; color:#273746;">Become a Donor</a>
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <a href="donate_blood.php">
+                                <button class="btnlast">Become a Donor</button>
+                            </a>
                         </div>
                     </div>
+
+                    <!-- Helping Videos Section -->
+                                    <div class="row mt-4">
+                    <div class="col-12">
+                        <h2 class="text-center sub-title">Helping Videos</h2>
+                        <hr style="width: 100%; border: 0.5px solid #B0B0B0; margin-top: 30px; ">
+                        <div class="row">
+                            <?php
+                                // Assuming you have a table that stores video details with columns like 'video_url', 'video_title'
+                                include 'conn.php';
+                                $sql = "SELECT * FROM videos WHERE status='active'"; // Assuming 'status' column filters active videos
+                                $result = mysqli_query($conn, $sql);
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        // Ensure the URL is properly formatted
+                                        $video_url = htmlspecialchars($row['video_url']);
+                                        ?>
+                                        <div class="col-md-4 mb-4">
+                        <div class="card" style="width: 100%; height: 300px; border: none;">
+                            <div class="card-body" style="padding: 20px;">
+                                <h5 class="card-title"><?php echo htmlspecialchars($row['video_title']); ?></h5>
+                                <iframe width="100%" height="100%" src="<?php echo $video_url; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <?php
+                }
+            } else {
+                echo "<p>No videos available at the moment.</p>";
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+
+
+
                 </div>
             </div>
         </div>
