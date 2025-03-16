@@ -58,7 +58,7 @@ $result=mysqli_query($conn,$sql) or die("query unsuccessful.");
                     <textarea rows="10" cols="100" class="form-control" id="message" name="message" required  maxlength="999" style="resize:none"></textarea>
                 </div>
             </div>
-            <button type="submit" name="send"  class="btn btn-primary">Send Message</button>
+            <button type="submit" name="send"  class="btn" style="cursor:pointer; background-color:red; color:white;">Send Message</button>
         </form>
     </div>
     <div class="col-lg-4 mb-4">

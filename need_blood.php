@@ -50,7 +50,7 @@
 </div>
 <div class="row">
 <div class="col-lg-4 mb-4">
-<div><input type="submit" name="search" class="btn btn-primary" value="Search" style="cursor:pointer"></div>
+<div><input type="submit" name="search" class="btn " value="Search" style="cursor:pointer; background-color:red; color:white;"></div>
 </div>
 
 </div><div class="row">
